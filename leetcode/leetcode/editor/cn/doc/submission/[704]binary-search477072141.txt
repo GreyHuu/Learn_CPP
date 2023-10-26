@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+            int left=0;
+            int right=nums.size()-1;
+            while(left <= right){   // 左闭右闭
+                int middle=left+(right-left)/2;
+                int middle_num=nums[middle];
+
+                if (middle_num==target) return middle;
+
+                if(middle_num>target)
+                    right=middle-1 ;
+                else
+                    left=middle+1 ;
+                
+            }
+            return -1;
+
+    }
+};
+//runtime:36 ms
+//memory:27.2 MB
