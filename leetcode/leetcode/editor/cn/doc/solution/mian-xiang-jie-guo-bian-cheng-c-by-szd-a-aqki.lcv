@@ -1,0 +1,25 @@
+### 解题思路
+
+别问46340是怎么得的
+
+### 代码
+
+* cpp
+
+```cpp
+class Solution {
+public:
+    int mySqrt(int x) {
+        int left=0,right=46340,mid=(left+right)/2;
+        while(left<right)
+        {
+            if(mid*mid<=x&&(mid+1)>x/(mid+1)) return mid;
+            if(mid*mid>x) right=mid;
+            else if((mid+1)<=x/(mid+1)) left=mid+1;
+            mid=(left+right)/2;
+        }   
+        return mid;
+    }
+};
+```
+
